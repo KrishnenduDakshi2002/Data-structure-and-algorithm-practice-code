@@ -1,0 +1,1 @@
+// traversal--> visiting all elements of the array
