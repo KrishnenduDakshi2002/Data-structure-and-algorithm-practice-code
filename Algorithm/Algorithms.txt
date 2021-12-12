@@ -1,0 +1,57 @@
+/*Algorithms ::
+
+    1.  Algorithm analysis
+    2.  asymptodtic analysis
+    3.  greedy Algorithm
+    4.  divide and conquer
+    5.  dynamic programming
+    6.  GCD algorithm
+
+
+Examples of divide and conquer:
+
+    a. merge sort
+    b. quick sort
+    c. binary search
+    d. Strassen's Matrix Multiplication
+    e. closest pair
+
+vairous sorting techniques:
+    a. sorting Algorithms
+    b. bubble sort
+    c. insertion sort
+    d. selection sort
+    e. merge sort
+    f. shell sort
+    g. quick sort
+
+searching Algorithms
+    a.linear search
+    b. binary search
+    c. interpolation search
+    d. hashtable
+
+
+Important catagories of Algorithms::
+   
+   search : Algorithm to search an item in a data structure
+   sort   : Algorithm to sort items in a certain order
+   insert : Algorithm to insert item in data structure
+   Update : Algorithm to Update an existing item in a data structure
+   delete : Algorithm to delete an existing item from a data structure
+   
+
+characteristics of an algorithm
+
+    Unambiguous − Algorithm should be clear and unambiguous. Each of its steps (or phases), and their inputs/outputs should be clear and must lead to only one meaning.
+
+    Input − An algorithm should have 0 or more well-defined inputs.
+
+    Output − An algorithm should have 1 or more well-defined outputs, and should match the desired output.
+
+    Finiteness − Algorithms must terminate after a finite number of steps.
+
+    Feasibility − Should be feasible with the available resources.
+
+    Independent − An algorithm should have step-by-step directions, which should be independent of any programming code.
+*/ 
