@@ -1,5 +1,6 @@
 
 // unordered_set is an implementation of hashing and hashtable 
+// unordered_map is also implementation of hashtable
 
 // finding duplicate items in an array using unoreder_set
 
