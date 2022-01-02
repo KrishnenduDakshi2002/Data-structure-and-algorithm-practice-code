@@ -41,7 +41,7 @@ public:
     node *delete_node(node *Node, int val);
     int height(node *Node);
     node *deepestNode(node *Node, int height);
-    void smallestpath(node* Node,int val1,int val2);
+    void smallestpath(node *Node, int val1, int val2);
 };
 
 bool BinarySearchTree::isEmpty()
@@ -157,31 +157,29 @@ void BinarySearchTree::printPostOrder(node *Node)
 // Breadth wise printing
 void BinarySearchTree::printBFS(node *Node)
 {
-    node* temp = NULL;
-    if(Node == NULL)
+    node *temp = NULL;
+    if (Node == NULL)
     {
         return;
     }
 
-    queue<node*> q;
+    queue<node *> q;
     q.push(root);
 
-    while(q.size() > 0)
+    while (q.size() > 0)
     {
         temp = q.front();
-        cout<<temp->data<<" ";
+        cout << temp->data << " ";
         q.pop();
-        if(temp->left!= NULL)
+        if (temp->left != NULL)
         {
             q.push(temp->left);
         }
-        if(temp->right!= NULL)
+        if (temp->right != NULL)
         {
             q.push(temp->right);
         }
     }
-
-
 }
 
 //Searching for elements in the tree, using traversal method
@@ -350,14 +348,14 @@ int BinarySearchTree::height(node *Node)
 // and i used this algo in printBFS()
 node *BinarySearchTree::deepestNode(node *Node, int height)
 {
-    node* tmp = NULL;
+    node *tmp = NULL;
     if (Node == NULL)
         return NULL;
- 
+
     // Creating a Queue
-    queue<node*> q;
+    queue<node *> q;
     q.push(root);
- 
+
     // Iterates until queue become empty
     while (q.size() > 0)
     {
@@ -369,12 +367,60 @@ node *BinarySearchTree::deepestNode(node *Node, int height)
             q.push(tmp->right);
     }
     return tmp;
-
 }
 
-void BinarySearchTree::smallestpath(node* Node,int val1,int val2)
+void BinarySearchTree::smallestpath(node *Node, int val1, int val2)
 {
-    
+    // by me
+    if (Node == NULL)
+    {
+        return;
+    }
+
+    deque<node *> deq;
+    deq.push_back(root);
+
+    // for val1
+    while (deq.size() > 0)
+    {
+        if (val1 < deq.back()->data)
+        {
+            deq.push_back(deq.back()->left);
+        }
+        else if (val1 > deq.back()->data)
+        {
+            deq.push_back(deq.back()->right);
+        }
+        else if (val1 == deq.back()->data)
+        {
+            break;
+        }
+    }
+    //for val2
+    while (deq.size() > 0)
+    {
+        if (val2 == deq.front()->data)
+        {
+            break;
+        }
+
+        if (val2 < deq.front()->data)
+        {
+            deq.pop_front();
+        }
+        else if (val2 > deq.front()->data)
+        {
+            deq.push_front(deq.front()->right);
+        }
+    }
+
+    //priting deque
+    while (deq.size() > 0)
+    {
+        cout << deq.back()->data;
+        deq.pop_back();
+        cout << " -> ";
+    }
 }
 
 int main()
@@ -388,7 +434,7 @@ int main()
     bst.insert(2);
     bst.insert(8);
     bst.insert(9);
-     
+    bst.insert(6);
 
     //bst.insert(0);
 
@@ -411,6 +457,8 @@ int main()
     cout << bst.deepestNode(bst.root, bst.height(bst.root))->data;
     NEWLINE
     bst.printBFS(bst.root);
+    NEWLINE
+    bst.smallestpath(bst.root, 2, 9);
 
     return 0;
 }
