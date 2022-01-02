@@ -41,7 +41,8 @@ public:
     node *delete_node(node *Node, int val);
     int height(node *Node);
     node *deepestNode(node *Node, int height);
-    void smallestpath(node *Node, int val1, int val2);
+    void shortestPath(node *Node, int val1, int val2);
+    int mostSearched();
 };
 
 bool BinarySearchTree::isEmpty()
@@ -369,7 +370,7 @@ node *BinarySearchTree::deepestNode(node *Node, int height)
     return tmp;
 }
 
-void BinarySearchTree::smallestpath(node *Node, int val1, int val2)
+void BinarySearchTree::shortestPath(node *Node, int val1, int val2)
 {
     // by me
     if (Node == NULL)
@@ -458,7 +459,7 @@ int main()
     NEWLINE
     bst.printBFS(bst.root);
     NEWLINE
-    bst.smallestpath(bst.root, 2, 9);
+    bst.shortestPath(bst.root, 2, 9);
 
     return 0;
 }

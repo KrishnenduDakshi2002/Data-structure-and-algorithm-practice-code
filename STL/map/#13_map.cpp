@@ -22,6 +22,7 @@ int main()
     marksMap["krish"] = 98;
     marksMap["harry"] = 95;
     marksMap["Rohan"] = 66;
+    marksMap.insert({"Krishnendu",100});
 // before insert
     display_map(marksMap);
     cout<<endl;
