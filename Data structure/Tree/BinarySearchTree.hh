@@ -1,8 +1,4 @@
-
-//https://www.youtube.com/watch?v=6U4K-7fu_4A&list=PLJyECGU9iUoBNsQluF9Y1gGAaUwaXlgvs&index=1&t=1829s
-
 #include <bits/stdc++.h>
-#define NEWLINE cout << endl;
 using namespace std;
 
 class node
@@ -24,7 +20,6 @@ class BinarySearchTree
 {
 public:
     node *root;
-    vector<pair<int, int>> mostsearch;
     BinarySearchTree()
     {
         root = NULL;
@@ -43,7 +38,7 @@ public:
     int height(node *Node);
     node *deepestNode(node *Node, int height);
     void shortestPath(node *Node, int val1, int val2);
-    int mostSearched(node *Node, int val);
+    int mostSearched(node* Node,int val);
     void rotation();
 };
 
@@ -186,8 +181,6 @@ void BinarySearchTree::printBFS(node *Node)
 }
 
 //Searching for elements in the tree, using traversal method
-// time complexity in binarysearch tree depends on height of a tree, for a unbalanced tree it can be
-// O(n) instead of O(logn)
 void BinarySearchTree::search(node *Node, int data)
 {
     if (Node == NULL)
@@ -388,10 +381,6 @@ void BinarySearchTree::shortestPath(node *Node, int val1, int val2)
     // for val1
     while (deq.size() > 0)
     {
-        if (val1 == deq.back()->data)
-        {
-            break;
-        }
         if (val1 < deq.back()->data)
         {
             deq.push_back(deq.back()->left);
@@ -399,6 +388,10 @@ void BinarySearchTree::shortestPath(node *Node, int val1, int val2)
         else if (val1 > deq.back()->data)
         {
             deq.push_back(deq.back()->right);
+        }
+        else if (val1 == deq.back()->data)
+        {
+            break;
         }
     }
     //for val2
@@ -430,60 +423,4 @@ void BinarySearchTree::shortestPath(node *Node, int val1, int val2)
         deq.pop_back();
         cout << " -> ";
     }
-}
-
-int main()
-{
-    BinarySearchTree bst;
-    cout << bst.isEmpty();
-    // bst.insert(7);
-    // bst.insert(5);
-    // bst.insert(3);
-    // bst.insert(1);
-    // bst.insert(2);
-    // bst.insert(8);
-    // bst.insert(9);
-    // bst.insert(6);
-    // bst.insert(-1);
-    // bst.insert(-2);
-
-    bst.insert(50);
-    bst.insert(40);
-    bst.insert(80);
-    bst.insert(35);
-    bst.insert(20);
-    bst.insert(10);
-    bst.insert(5);
-    bst.insert(90);
-    bst.insert(100);
-    bst.insert(85);
-    bst.insert(44);
-    bst.insert(47);
-    bst.insert(49);
-    bst.insert(12);
-    bst.insert(70);
-
-    bst.printPreOrder(bst.root);
-    NEWLINE
-    bst.printinOrder(bst.root);
-    NEWLINE
-    bst.printPostOrder(bst.root);
-    NEWLINE
-    bst.search(bst.root, 0);
-    cout << "Minimum value : " << bst.findMin(bst.root);
-    NEWLINE
-    cout << "Maximum value : " << bst.findMax(bst.root);
-    NEWLINE
-    //cout<<minVal_subtree_right(bst.root)->data;  // prints 1
-    //bst.delete_node(bst.root,7);
-    //bst.printinOrder(bst.root);
-    cout << "Height is :" << bst.height(bst.root);
-    NEWLINE
-    cout << bst.deepestNode(bst.root, bst.height(bst.root))->data;
-    NEWLINE
-    bst.printBFS(bst.root);
-    NEWLINE
-    bst.shortestPath(bst.root, 5, 85);
-
-    return 0;
 }

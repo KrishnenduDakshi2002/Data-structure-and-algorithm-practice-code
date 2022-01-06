@@ -37,6 +37,9 @@ int main()
     cout<<" size of map is ::"<<marksMap.size();
     NewLine
     cout<<" max size of map can be ::"<<marksMap.max_size();
+    NewLine
+    auto itrele = marksMap.find("krish");  //finds gives iterator to that key
+    cout<<itrele->second;
 
 
 
