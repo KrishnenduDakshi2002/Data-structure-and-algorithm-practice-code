@@ -21,7 +21,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    cout<<to_decimal(11111,1);
+    cout<<to_decimal(11101,1);
 
     
     return 0;

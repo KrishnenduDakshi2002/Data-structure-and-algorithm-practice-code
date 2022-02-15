@@ -2,6 +2,13 @@
 #define NEWLINE cout<<endl;
 using namespace std;
 
+int coeff(int n, int k)
+{
+    if(k==0 || n==k)
+        return 1;
+
+    return coeff(n-1,k-1) + coeff(n-1,k);
+}
 
 
 int main()
@@ -10,10 +17,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string s;
-    int n =1030;
-    s = to_string(n);
-    cout<<s[2];
-
+    cout<<coeff(4,2);
+    
     return 0;
-} 
+}
