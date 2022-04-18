@@ -56,4 +56,10 @@ public class quicksort {
     Quick sort
     -> worst case complexity : O(n^2)  // occurs when our smallest or largest element becomes pivot
     -> average : O(nlogn)
+
+
+    still we prefer quick sort because we don't use memory as merge sort and 
+    this worst case arises very rarely.
+
+    
     */

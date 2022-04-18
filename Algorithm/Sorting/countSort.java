@@ -1,5 +1,10 @@
 public class countSort {
     public static void main(String[] args) {
-        System.out.println(4113);
+
+        int a = 1;
+        while(a<=1)
+        {
+            
+        }
     }
 }
